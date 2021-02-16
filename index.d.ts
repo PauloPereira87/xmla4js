@@ -91,14 +91,14 @@ export class XmlaRowset {
     hasMoreRows(): boolean
     nextRow(): void
     next(): void
-    eachRow(rowCallback: function(): void, scope: Object, args: Object): boolean
+    eachRow(rowCallback: Function, scope: Object, args: Object): boolean
     currRow(): bigint
     rowCount(): bigint
     reset(): void
     fieldDef(name: string): fieldDef
     fieldIndex(name: string): bigint
     fieldName(index: bigint): string
-    fieldVal(nameOrIndex: string | bigint): any[]|boolean|float|bigint|string
+    fieldVal(nameOrIndex: string | bigint): any[]|boolean|number|bigint|string
     fieldCount(): bigint
     close(): void
 
@@ -106,7 +106,7 @@ export class XmlaRowset {
     fetchAsArray(array: any[]): any[]
     readAsObject(object: Object): Object
     fetchAsObject(object: Object): Object
-    fetchCustom(func: function(), args: Object): mixed|boolean
+    fetchCustom(func: Function, args: Object): any|boolean
 
     fetchAllAsArray(rows?: Array<any>): Array<any>
     fetchAllAsObject(rows?: Array<any>): Array<any>
