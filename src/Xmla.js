@@ -6221,8 +6221,8 @@ Xmla.Rowset.prototype = {
 *   Retrieves the name of a field by field Index.
 *   Field indexes start at 0.
 *   @method fieldName
-*   @param {string} name The name of the field for which you want to retrieve the index.
-*   @return {int} The ordinal position (starting at 0) of the field that matches the argument.
+*   @param {int} index The ordinal position (starting at 0) of the field for which you want to retrieve the index.
+*   @return {string} The name of the field matches the argument.
 */
     fieldName: function(index){
         var fieldName = this.fieldOrder[index];
@@ -6237,12 +6237,12 @@ Xmla.Rowset.prototype = {
 /**
 *   Retrieves a value from the current row for the field having the name specified by the argument.
 *   @method fieldVal
-*   @param {string | int} name The name or the index of the field for which you want to retrieve the value.
+*   @param {string | int} nameOrIndex The name or the index of the field for which you want to retrieve the value.
 *   @return {array|boolean|float|int|string} From the current row, the value of the field that matches the argument.
 */
-    fieldVal: function(name){
-        if (_isNum(name)) name = this.fieldName(name);
-        return this.fieldDef(name).getter.call(this);
+    fieldVal: function(nameOrIndex){
+        if (_isNum(nameOrIndex)) nameOrIndex = this.fieldName(nameOrIndex);
+        return this.fieldDef(nameOrIndex).getter.call(this);
     },
 /**
 *   Returns the number of fields in this rowset.
