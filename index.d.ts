@@ -34,76 +34,76 @@ interface requestOptions extends executeOptions {
 export class XmlaRowset {
     constructor(node: DOMDocument, requestType: string, xmla: Xmla)
 
-    static readonly MD_DIMTYPE_UNKNOWN: int
-    static readonly MD_DIMTYPE_TIME: int
-    static readonly MD_DIMTYPE_MEASURE: int
-    static readonly MD_DIMTYPE_OTHER: int
-    static readonly MD_DIMTYPE_QUANTITATIVE: int
-    static readonly MD_DIMTYPE_ACCOUNTS: int
-    static readonly MD_DIMTYPE_CUSTOMERS: int
-    static readonly MD_DIMTYPE_PRODUCTS: int
-    static readonly MD_DIMTYPE_SCENARIO: int
-    static readonly MD_DIMTYPE_UTILIY: int
-    static readonly MD_DIMTYPE_CURRENCY: int
-    static readonly MD_DIMTYPE_RATES: int
-    static readonly MD_DIMTYPE_CHANNEL: int
-    static readonly MD_DIMTYPE_PROMOTION: int
-    static readonly MD_DIMTYPE_ORGANIZATION: int
-    static readonly MD_DIMTYPE_BILL_OF_MATERIALS: int
-    static readonly MD_DIMTYPE_GEOGRAPHY: int
-    static readonly MD_STRUCTURE_FULLYBALANCED: int
-    static readonly MD_STRUCTURE_RAGGEDBALANCED: int
-    static readonly MD_STRUCTURE_UNBALANCED: int
-    static readonly MD_STRUCTURE_NETWORK: int
-    static readonly MD_USER_DEFINED: int
-    static readonly MD_SYSTEM_ENABLED: int
-    static readonly MD_SYSTEM_INTERNAL: int
-    static readonly MDMEMBER_TYPE_REGULAR: int
-    static readonly MDMEMBER_TYPE_ALL: int
-    static readonly MDMEMBER_TYPE_FORMULA: int
-    static readonly MDMEMBER_TYPE_MEASURE: int
-    static readonly MDMEMBER_TYPE_UNKNOWN: int
-    static readonly MDMEASURE_AGGR_SUM: int
-    static readonly MDMEASURE_AGGR_COUNT: int
-    static readonly MDMEASURE_AGGR_MIN: int
-    static readonly MDMEASURE_AGGR_MAX: int
-    static readonly MDMEASURE_AGGR_AVG: int
-    static readonly MDMEASURE_AGGR_VAR: int
-    static readonly MDMEASURE_AGGR_STD: int
-    static readonly MDMEASURE_AGGR_DST: int
-    static readonly MDMEASURE_AGGR_NONE: int
-    static readonly MDMEASURE_AGGR_AVGCHILDREN: int
-    static readonly MDMEASURE_AGGR_FIRSTCHILD: int
-    static readonly MDMEASURE_AGGR_LASTCHILD: int
-    static readonly MDMEASURE_AGGR_FIRSTNONEMPTY: int
-    static readonly MDMEASURE_AGGR_LASTNONEMPTY: int
-    static readonly MDMEASURE_AGGR_BYACCOUNT: int
-    static readonly MDMEASURE_AGGR_CALCULATED: int
-    static readonly MDMEASURE_AGGR_UNKNOWN: int
-    static readonly MDPROP_MEMBER: int
-    static readonly MDPROP_CELL: int
-    static readonly MDPROP_SYSTEM: int
-    static readonly MDPROP_BLOB: int
+    static readonly MD_DIMTYPE_UNKNOWN: bigint
+    static readonly MD_DIMTYPE_TIME: bigint
+    static readonly MD_DIMTYPE_MEASURE: bigint
+    static readonly MD_DIMTYPE_OTHER: bigint
+    static readonly MD_DIMTYPE_QUANTITATIVE: bigint
+    static readonly MD_DIMTYPE_ACCOUNTS: bigint
+    static readonly MD_DIMTYPE_CUSTOMERS: bigint
+    static readonly MD_DIMTYPE_PRODUCTS: bigint
+    static readonly MD_DIMTYPE_SCENARIO: bigint
+    static readonly MD_DIMTYPE_UTILIY: bigint
+    static readonly MD_DIMTYPE_CURRENCY: bigint
+    static readonly MD_DIMTYPE_RATES: bigint
+    static readonly MD_DIMTYPE_CHANNEL: bigint
+    static readonly MD_DIMTYPE_PROMOTION: bigint
+    static readonly MD_DIMTYPE_ORGANIZATION: bigint
+    static readonly MD_DIMTYPE_BILL_OF_MATERIALS: bigint
+    static readonly MD_DIMTYPE_GEOGRAPHY: bigint
+    static readonly MD_STRUCTURE_FULLYBALANCED: bigint
+    static readonly MD_STRUCTURE_RAGGEDBALANCED: bigint
+    static readonly MD_STRUCTURE_UNBALANCED: bigint
+    static readonly MD_STRUCTURE_NETWORK: bigint
+    static readonly MD_USER_DEFINED: bigint
+    static readonly MD_SYSTEM_ENABLED: bigint
+    static readonly MD_SYSTEM_INTERNAL: bigint
+    static readonly MDMEMBER_TYPE_REGULAR: bigint
+    static readonly MDMEMBER_TYPE_ALL: bigint
+    static readonly MDMEMBER_TYPE_FORMULA: bigint
+    static readonly MDMEMBER_TYPE_MEASURE: bigint
+    static readonly MDMEMBER_TYPE_UNKNOWN: bigint
+    static readonly MDMEASURE_AGGR_SUM: bigint
+    static readonly MDMEASURE_AGGR_COUNT: bigint
+    static readonly MDMEASURE_AGGR_MIN: bigint
+    static readonly MDMEASURE_AGGR_MAX: bigint
+    static readonly MDMEASURE_AGGR_AVG: bigint
+    static readonly MDMEASURE_AGGR_VAR: bigint
+    static readonly MDMEASURE_AGGR_STD: bigint
+    static readonly MDMEASURE_AGGR_DST: bigint
+    static readonly MDMEASURE_AGGR_NONE: bigint
+    static readonly MDMEASURE_AGGR_AVGCHILDREN: bigint
+    static readonly MDMEASURE_AGGR_FIRSTCHILD: bigint
+    static readonly MDMEASURE_AGGR_LASTCHILD: bigint
+    static readonly MDMEASURE_AGGR_FIRSTNONEMPTY: bigint
+    static readonly MDMEASURE_AGGR_LASTNONEMPTY: bigint
+    static readonly MDMEASURE_AGGR_BYACCOUNT: bigint
+    static readonly MDMEASURE_AGGR_CALCULATED: bigint
+    static readonly MDMEASURE_AGGR_UNKNOWN: bigint
+    static readonly MDPROP_MEMBER: bigint
+    static readonly MDPROP_CELL: bigint
+    static readonly MDPROP_SYSTEM: bigint
+    static readonly MDPROP_BLOB: bigint
 
-    getType(): int
+    getType(): bigint
     getFields(): [fieldDef]
     getFieldNames(): [string]
     hasMoreRows(): boolean
     nextRow(): void
     next(): void
     eachRow(rowCallback: function(): void, scope: Object, args: Object): boolean
-    currRow(): int
-    rowCount(): int
+    currRow(): bigint
+    rowCount(): bigint
     reset(): void
     fieldDef(name: string): fieldDef
-    fieldIndex(name: string): int
-    fieldName(index: int): string
-    fieldVal(nameOrIndex: string | int): array|boolean|float|int|string
-    fieldCount(): int
+    fieldIndex(name: string): bigint
+    fieldName(index: bigint): string
+    fieldVal(nameOrIndex: string | bigint): any[]|boolean|float|bigint|string
+    fieldCount(): bigint
     close(): void
 
-    readAsArray(array: array): array
-    fetchAsArray(array: array): array
+    readAsArray(array: any[]): any[]
+    fetchAsArray(array: any[]): any[]
     readAsObject(object: Object): Object
     fetchAsObject(object: Object): Object
     fetchCustom(func: function(), args: Object): mixed|boolean
@@ -194,7 +194,7 @@ export class Xmla implements XmlaInstance {
     responseXML: DOMDocument
     getResponseXML(): DOMDocument
     setOptions(options: Object): void
-    addListener(listener: Object | Array): void
+    addListener(listener: Object | any[]): void
     getXmlaSoapMessage(options: object): string
     request(options: requestOptions): XmlaDataset | XmlaRowset
     execute(options: executeOptions): XmlaDataset | XmlaRowset
@@ -233,4 +233,8 @@ export class Xmla implements XmlaInstance {
 interface DOMDocument {
     nodeType: number
     childNodes: any[]
+}
+
+interface fieldDef {
+    
 }
