@@ -102,8 +102,8 @@ export class XmlaRowset {
     fieldCount(): bigint
     close(): void
 
-    readAsArray(array: any[]): any[]
-    fetchAsArray(array: any[]): any[]
+    readAsArray(array?: any[]): any[]
+    fetchAsArray(array?: any[]): any[]
     readAsObject(object: Object): Object
     fetchAsObject(object: Object): Object
     fetchCustom(func: Function, args: Object): any|boolean
