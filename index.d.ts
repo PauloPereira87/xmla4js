@@ -201,28 +201,28 @@ export class Xmla implements XmlaInstance {
     executeTabular(options: requestOptions): XmlaRowset
     executeMultiDimensional(options: requestOptions): XmlaRowset
 
-    discover(options: Object): XmlaRowset
-    discoverDataSources(options: Object): XmlaRowset
-    discoverProperties(options: Object): XmlaRowset
-    discoverSchemaRowsets(options: Object): XmlaRowset
-    discoverEnumerators(options: Object): XmlaRowset
-    discoverKeywords(options: Object): XmlaRowset
-    discoverLiterals(options: Object): XmlaRowset
-    discoverDBCatalogs(options: Object): XmlaRowset
-    discoverDBColumns(options: Object): XmlaRowset
-    discoverDBProviderTypes(options: Object): XmlaRowset
-    discoverDBSchemata(options: Object): XmlaRowset
-    discoverDBTables(options: Object): XmlaRowset
-    discoverDBTablesInfo(options: Object): XmlaRowset
-    discoverMDActions(options: Object): XmlaRowset
-    discoverMDCubes(options: Object): XmlaRowset
-    discoverMDDimensions(options: Object): XmlaRowset
-    discoverMDFunctions(options: Object): XmlaRowset
-    discoverMDHierarchies(options: Object): XmlaRowset
-    discoverMDMeasures(options: Object): XmlaRowset
-    discoverMDMembers(options: Object): XmlaRowset
-    discoverMDProperties(options: Object): XmlaRowset
-    discoverMDSets(options: Object): XmlaRowset
+    discover(options: requestOptions): XmlaRowset
+    discoverDataSources(options: requestOptions): XmlaRowset
+    discoverProperties(options: requestOptions): XmlaRowset
+    discoverSchemaRowsets(options: requestOptions): XmlaRowset
+    discoverEnumerators(options: requestOptions): XmlaRowset
+    discoverKeywords(options: requestOptions): XmlaRowset
+    discoverLiterals(options: requestOptions): XmlaRowset
+    discoverDBCatalogs(options: requestOptions): XmlaRowset
+    discoverDBColumns(options: requestOptions): XmlaRowset
+    discoverDBProviderTypes(options: requestOptions): XmlaRowset
+    discoverDBSchemata(options: requestOptions): XmlaRowset
+    discoverDBTables(options: requestOptions): XmlaRowset
+    discoverDBTablesInfo(options: requestOptions): XmlaRowset
+    discoverMDActions(options: requestOptions): XmlaRowset
+    discoverMDCubes(options: requestOptions): XmlaRowset
+    discoverMDDimensions(options: requestOptions): XmlaRowset
+    discoverMDFunctions(options: requestOptions): XmlaRowset
+    discoverMDHierarchies(options: requestOptions): XmlaRowset
+    discoverMDMeasures(options: requestOptions): XmlaRowset
+    discoverMDMembers(options: requestOptions): XmlaRowset
+    discoverMDProperties(options: requestOptions): XmlaRowset
+    discoverMDSets(options: requestOptions): XmlaRowset
 
     Rowset: XmlaRowset
 
