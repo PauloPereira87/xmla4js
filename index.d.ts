@@ -10,15 +10,20 @@ interface XmlaProperties {
     Format?: string
 }
 
-interface executeOptions {
+
+interface requestDiscoverOptions extends requestOptions {
+}
+
+interface requestExecuteOptions extends requestOptions {
+    statement: string
+}
+
+
+interface requestOptions {
     url: string
     statement?: string
     properties?: XmlaProperties
     async?: boolean
-}
-
-
-interface requestOptions extends executeOptions {
     method?: 'METHOD_DISCOVER' | 'METHOD_EXECUTE'
     restrictions?: Object
     username?: string
@@ -197,32 +202,32 @@ export class Xmla implements XmlaInstance {
     addListener(listener: Object | any[]): void
     getXmlaSoapMessage(options: object): string
     request(options: requestOptions): XmlaDataset | XmlaRowset
-    execute(options: executeOptions): XmlaDataset | XmlaRowset
-    executeTabular(options: requestOptions): XmlaRowset
-    executeMultiDimensional(options: requestOptions): XmlaRowset
+    execute(options: requestExecuteOptions): XmlaDataset | XmlaRowset
+    executeTabular(options: requestExecuteOptions): XmlaRowset
+    executeMultiDimensional(options: requestExecuteOptions): XmlaRowset
 
-    discover(options: requestOptions): XmlaRowset
-    discoverDataSources(options: requestOptions): XmlaRowset
-    discoverProperties(options: requestOptions): XmlaRowset
-    discoverSchemaRowsets(options: requestOptions): XmlaRowset
-    discoverEnumerators(options: requestOptions): XmlaRowset
-    discoverKeywords(options: requestOptions): XmlaRowset
-    discoverLiterals(options: requestOptions): XmlaRowset
-    discoverDBCatalogs(options: requestOptions): XmlaRowset
-    discoverDBColumns(options: requestOptions): XmlaRowset
-    discoverDBProviderTypes(options: requestOptions): XmlaRowset
-    discoverDBSchemata(options: requestOptions): XmlaRowset
-    discoverDBTables(options: requestOptions): XmlaRowset
-    discoverDBTablesInfo(options: requestOptions): XmlaRowset
-    discoverMDActions(options: requestOptions): XmlaRowset
-    discoverMDCubes(options: requestOptions): XmlaRowset
-    discoverMDDimensions(options: requestOptions): XmlaRowset
-    discoverMDFunctions(options: requestOptions): XmlaRowset
-    discoverMDHierarchies(options: requestOptions): XmlaRowset
-    discoverMDMeasures(options: requestOptions): XmlaRowset
-    discoverMDMembers(options: requestOptions): XmlaRowset
-    discoverMDProperties(options: requestOptions): XmlaRowset
-    discoverMDSets(options: requestOptions): XmlaRowset
+    discover(options: requestDiscoverOptions): XmlaRowset
+    discoverDataSources(options: requestDiscoverOptions): XmlaRowset
+    discoverProperties(options: requestDiscoverOptions): XmlaRowset
+    discoverSchemaRowsets(options: requestDiscoverOptions): XmlaRowset
+    discoverEnumerators(options: requestDiscoverOptions): XmlaRowset
+    discoverKeywords(options: requestDiscoverOptions): XmlaRowset
+    discoverLiterals(options: requestDiscoverOptions): XmlaRowset
+    discoverDBCatalogs(options: requestDiscoverOptions): XmlaRowset
+    discoverDBColumns(options: requestDiscoverOptions): XmlaRowset
+    discoverDBProviderTypes(options: requestDiscoverOptions): XmlaRowset
+    discoverDBSchemata(options: requestDiscoverOptions): XmlaRowset
+    discoverDBTables(options: requestDiscoverOptions): XmlaRowset
+    discoverDBTablesInfo(options: requestDiscoverOptions): XmlaRowset
+    discoverMDActions(options: requestDiscoverOptions): XmlaRowset
+    discoverMDCubes(options: requestDiscoverOptions): XmlaRowset
+    discoverMDDimensions(options: requestDiscoverOptions): XmlaRowset
+    discoverMDFunctions(options: requestDiscoverOptions): XmlaRowset
+    discoverMDHierarchies(options: requestDiscoverOptions): XmlaRowset
+    discoverMDMeasures(options: requestDiscoverOptions): XmlaRowset
+    discoverMDMembers(options: requestDiscoverOptions): XmlaRowset
+    discoverMDProperties(options: requestDiscoverOptions): XmlaRowset
+    discoverMDSets(options: requestDiscoverOptions): XmlaRowset
 
     Rowset: XmlaRowset
 
