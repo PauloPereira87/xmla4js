@@ -18,18 +18,21 @@ interface requestExecuteOptions extends requestOptions {
     statement: string
 }
 
-
-interface requestOptions {
+interface xmlaOptions {
     url: string
     statement?: string
     properties?: XmlaProperties
     async?: boolean
-    method?: 'METHOD_DISCOVER' | 'METHOD_EXECUTE'
     restrictions?: Object
     username?: string
     password?: string
-
     requestTimeout?: number
+}
+
+
+interface requestOptions extends xmlaOptions {
+
+    method?: 'METHOD_DISCOVER' | 'METHOD_EXECUTE'
 
     success?(xmlaInstance: XmlaInstance, options: string, response: XmlaRowset): void
     error?(xmlaInstance: XmlaInstance, options: any, exception: any): void
@@ -134,6 +137,16 @@ interface XmlaOptions {
     addFieldGetters?: boolean
 }
 
+interface listenerEvent {
+    event: string
+}
+
+interface listenerEvents {
+    events: string[]
+}
+
+type listener = listenerEvent | listenerEvents
+
 export class Xmla implements XmlaInstance {
 
     static readonly METHOD_DISCOVER: string
@@ -198,8 +211,8 @@ export class Xmla implements XmlaInstance {
     responseText: string
     responseXML: DOMDocument
     getResponseXML(): DOMDocument
-    setOptions(options: Object): void
-    addListener(listener: Object | any[]): void
+    setOptions(options: xmlaOptions): void
+    addListener(listener: listener): void
     getXmlaSoapMessage(options: object): string
     request(options: requestOptions): XmlaDataset | XmlaRowset
     execute(options: requestExecuteOptions): XmlaDataset | XmlaRowset
